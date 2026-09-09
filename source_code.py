@@ -1,15 +1,7 @@
-# ================================================================
+#================================================================
 # MAJOR PROJECT
 # Seasonal Agriculture Performance Analysis
-#
-# Developed using:
-# Python
-# Pandas
-# NumPy
-# Matplotlib
-# Seaborn
-# SciPy
-# ================================================================
+#================================================================
 
 import os
 import warnings
@@ -24,9 +16,7 @@ from scipy.stats import pearsonr, f_oneway
 warnings.filterwarnings("ignore")
 
 
-# ================================================================
-# 1. CONFIGURATION
-# ================================================================
+# CONFIGURATION
 
 # Change this path if your CSV file is stored somewhere else
 FILE_PATH = "seasonal_agriculture_performance_dataset.csv"
@@ -44,9 +34,7 @@ print("SEASONAL AGRICULTURE PERFORMANCE ANALYSIS")
 print("=" * 70)
 
 
-# ================================================================
-# 2. LOAD DATASET
-# ================================================================
+# LOAD DATASET
 
 print("\n[1] Loading dataset...")
 
@@ -66,9 +54,7 @@ print("\nFirst 5 records:")
 print(df.head())
 
 
-# ================================================================
-# 3. BASIC DATASET INFORMATION
-# ================================================================
+# BASIC DATASET INFORMATION
 
 print("\n" + "=" * 70)
 print("DATASET INFORMATION")
@@ -93,9 +79,7 @@ df.describe(include="all").T.to_csv(
 )
 
 
-# ================================================================
-# 4. CHECK DUPLICATES
-# ================================================================
+# CHECK DUPLICATES
 
 print("\n" + "=" * 70)
 print("DUPLICATE ANALYSIS")
@@ -113,9 +97,7 @@ else:
     print("No duplicate rows found.")
 
 
-# ================================================================
-# 5. MISSING VALUE ANALYSIS
-# ================================================================
+# MISSING VALUE ANALYSIS
 
 print("\n" + "=" * 70)
 print("MISSING VALUE ANALYSIS")
@@ -139,9 +121,7 @@ missing_table.to_csv(
 )
 
 
-# ================================================================
-# 6. DATA CLEANING
-# ================================================================
+# DATA CLEANING
 
 print("\n" + "=" * 70)
 print("DATA CLEANING")
@@ -203,9 +183,7 @@ df.to_csv(
 )
 
 
-# ================================================================
-# 7. SEASON DISTRIBUTION
-# ================================================================
+# SEASON DISTRIBUTION
 
 print("\n" + "=" * 70)
 print("SEASON DISTRIBUTION")
@@ -220,9 +198,7 @@ season_counts.to_csv(
 )
 
 
-# ================================================================
-# 8. CROP DISTRIBUTION
-# ================================================================
+# CROP DISTRIBUTION
 
 print("\n" + "=" * 70)
 print("CROP DISTRIBUTION")
@@ -237,9 +213,7 @@ crop_counts.to_csv(
 )
 
 
-# ================================================================
-# 9. SEASONAL PERFORMANCE SUMMARY
-# ================================================================
+# SEASONAL PERFORMANCE SUMMARY
 
 print("\n" + "=" * 70)
 print("SEASONAL PERFORMANCE ANALYSIS")
@@ -284,9 +258,7 @@ seasonal_summary.to_csv(
 )
 
 
-# ================================================================
-# 10. SEASONAL MEDIAN ANALYSIS
-# ================================================================
+# SEASONAL MEDIAN ANALYSIS
 
 seasonal_median = df.groupby(
     "Season"
@@ -297,9 +269,7 @@ seasonal_median.to_csv(
 )
 
 
-# ================================================================
-# 11. CROP-WISE SEASONAL ANALYSIS
-# ================================================================
+# CROP-WISE SEASONAL ANALYSIS
 
 print("\n" + "=" * 70)
 print("CROP-WISE SEASONAL ANALYSIS")
@@ -321,9 +291,7 @@ crop_season_summary.to_csv(
 )
 
 
-# ================================================================
-# 12. IRRIGATION METHOD ANALYSIS
-# ================================================================
+# IRRIGATION METHOD ANALYSIS
 
 print("\n" + "=" * 70)
 print("IRRIGATION ANALYSIS")
@@ -345,9 +313,7 @@ irrigation_summary.to_csv(
 )
 
 
-# ================================================================
-# 13. BEST SEASON BASED ON DIFFERENT PARAMETERS
-# ================================================================
+# BEST SEASON BASED ON DIFFERENT PARAMETERS
 
 print("\n" + "=" * 70)
 print("BEST SEASON ANALYSIS")
@@ -374,9 +340,7 @@ for metric in metrics:
         )
 
 
-# ================================================================
-# 14. WORST SEASON ANALYSIS
-# ================================================================
+# WORST SEASON ANALYSIS
 
 print("\n" + "=" * 70)
 print("LOWEST PERFORMANCE ANALYSIS")
@@ -395,9 +359,7 @@ for metric in metrics:
         )
 
 
-# ================================================================
-# 15. PLOT 1 - NUMBER OF FARMS/RECORDS BY SEASON
-# ================================================================
+# PLOT 1 - NUMBER OF FARMS/RECORDS BY SEASON
 
 plt.figure(figsize=(9, 6))
 
@@ -428,9 +390,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 16. PLOT 2 - AVERAGE YIELD BY SEASON
-# ================================================================
+# PLOT 2 - AVERAGE YIELD BY SEASON
 
 yield_by_season = df.groupby(
     "Season"
@@ -466,9 +426,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 17. PLOT 3 - PRODUCTION BY SEASON
-# ================================================================
+# PLOT 3 - PRODUCTION BY SEASON
 
 production_by_season = df.groupby(
     "Season"
@@ -504,9 +462,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 18. PLOT 4 - PROFIT BY SEASON
-# ================================================================
+# PLOT 4 - PROFIT BY SEASON
 
 profit_by_season = df.groupby(
     "Season"
@@ -547,9 +503,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 19. PLOT 5 - REVENUE VS COST
-# ================================================================
+# PLOT 5 - REVENUE VS COST
 
 economic_summary = df.groupby(
     "Season"
@@ -586,9 +540,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 20. PLOT 6 - RAINFALL BY SEASON
-# ================================================================
+# PLOT 6 - RAINFALL BY SEASON
 
 plt.figure(figsize=(9, 6))
 
@@ -619,9 +571,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 21. PLOT 7 - TEMPERATURE BY SEASON
-# ================================================================
+# PLOT 7 - TEMPERATURE BY SEASON
 
 plt.figure(figsize=(9, 6))
 
@@ -652,9 +602,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 22. PLOT 8 - WATER USAGE BY SEASON
-# ================================================================
+# PLOT 8 - WATER USAGE BY SEASON
 
 water_summary = df.groupby(
     "Season"
@@ -690,9 +638,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 23. PLOT 9 - WATER EFFICIENCY
-# ================================================================
+# PLOT 9 - WATER EFFICIENCY
 
 efficiency_summary = df.groupby(
     "Season"
@@ -731,9 +677,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 24. PLOT 10 - DISEASE/PEST RISK
-# ================================================================
+# PLOT 10 - DISEASE/PEST RISK
 
 risk_summary = df.groupby(
     "Season"
@@ -769,9 +713,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 25. PLOT 11 - YIELD DISTRIBUTION BY SEASON
-# ================================================================
+# PLOT 11 - YIELD DISTRIBUTION BY SEASON
 
 plt.figure(figsize=(10, 6))
 
@@ -802,9 +744,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 26. PLOT 12 - CROP VS SEASON YIELD
-# ================================================================
+# PLOT 12 - CROP VS SEASON YIELD
 
 crop_yield = df.pivot_table(
     index="Crop",
@@ -843,9 +783,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 27. PLOT 13 - IRRIGATION METHOD VS YIELD
-# ================================================================
+# PLOT 13 - IRRIGATION METHOD VS YIELD
 
 plt.figure(figsize=(11, 6))
 
@@ -877,9 +815,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 28. PLOT 14 - FERTILIZER VS YIELD
-# ================================================================
+# PLOT 14 - FERTILIZER VS YIELD
 
 plt.figure(figsize=(10, 6))
 
@@ -912,9 +848,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 29. PLOT 15 - RAINFALL VS YIELD
-# ================================================================
+# PLOT 15 - RAINFALL VS YIELD
 
 plt.figure(figsize=(10, 6))
 
@@ -947,9 +881,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 30. PLOT 16 - TEMPERATURE VS YIELD
-# ================================================================
+# PLOT 16 - TEMPERATURE VS YIELD
 
 plt.figure(figsize=(10, 6))
 
@@ -982,9 +914,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 31. PLOT 17 - SOIL MOISTURE VS YIELD
-# ================================================================
+# PLOT 17 - SOIL MOISTURE VS YIELD
 
 plt.figure(figsize=(10, 6))
 
@@ -1017,9 +947,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 32. CORRELATION ANALYSIS
-# ================================================================
+# CORRELATION ANALYSIS
 
 print("\n" + "=" * 70)
 print("CORRELATION ANALYSIS")
@@ -1047,9 +975,7 @@ correlation_matrix.to_csv(
 )
 
 
-# ================================================================
-# 33. CORRELATION HEATMAP
-# ================================================================
+# CORRELATION HEATMAP
 
 plt.figure(figsize=(16, 12))
 
@@ -1078,9 +1004,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 34. PEARSON CORRELATION WITH YIELD
-# ================================================================
+# PEARSON CORRELATION WITH YIELD
 
 print("\n" + "=" * 70)
 print("PEARSON CORRELATION WITH YIELD")
@@ -1132,9 +1056,7 @@ correlation_results.to_csv(
 )
 
 
-# ================================================================
-# 35. ANOVA - YIELD DIFFERENCE BETWEEN SEASONS
-# ================================================================
+# ANOVA - YIELD DIFFERENCE BETWEEN SEASONS
 
 print("\n" + "=" * 70)
 print("ANOVA TEST: YIELD VS SEASON")
@@ -1178,9 +1100,7 @@ if len(season_groups) >= 2:
         )
 
 
-# ================================================================
-# 36. PROFITABILITY ANALYSIS
-# ================================================================
+# PROFITABILITY ANALYSIS
 
 print("\n" + "=" * 70)
 print("PROFITABILITY ANALYSIS")
@@ -1213,9 +1133,7 @@ profitability.to_csv(
 )
 
 
-# ================================================================
-# 37. PROFIT MARGIN PLOT
-# ================================================================
+# PROFIT MARGIN PLOT
 
 plt.figure(figsize=(9, 6))
 
@@ -1252,9 +1170,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 38. TOP PERFORMING CROPS
-# ================================================================
+# TOP PERFORMING CROPS
 
 print("\n" + "=" * 70)
 print("TOP PERFORMING CROPS")
@@ -1282,9 +1198,7 @@ crop_performance.to_csv(
 )
 
 
-# ================================================================
-# 39. TOP STATES
-# ================================================================
+# TOP STATES
 
 print("\n" + "=" * 70)
 print("STATE-WISE PERFORMANCE")
@@ -1312,9 +1226,7 @@ state_performance.to_csv(
 )
 
 
-# ================================================================
-# 40. SEASON × CROP PROFIT ANALYSIS
-# ================================================================
+# SEASON × CROP PROFIT ANALYSIS
 
 season_crop_profit = df.pivot_table(
     index="Crop",
@@ -1354,9 +1266,7 @@ plt.savefig(
 plt.show()
 
 
-# ================================================================
-# 41. OUTLIER ANALYSIS
-# ================================================================
+# OUTLIER ANALYSIS
 
 print("\n" + "=" * 70)
 print("OUTLIER ANALYSIS")
@@ -1418,9 +1328,7 @@ outlier_results.to_csv(
 )
 
 
-# ================================================================
-# 42. AUTOMATIC KEY INSIGHTS
-# ================================================================
+# AUTOMATIC KEY INSIGHTS
 
 print("\n" + "=" * 70)
 print("KEY DATA-DRIVEN INSIGHTS")
@@ -1479,9 +1387,7 @@ print(
 )
 
 
-# ================================================================
-# 43. GENERATE TEXT REPORT
-# ================================================================
+# GENERATE TEXT REPORT
 
 report_path = os.path.join(
     OUTPUT_DIR,
@@ -1552,9 +1458,7 @@ with open(
     )
 
 
-# ================================================================
-# 44. FINAL OUTPUT
-# ================================================================
+# FINAL OUTPUT
 
 print("\n" + "=" * 70)
 print("PROJECT ANALYSIS COMPLETED")
