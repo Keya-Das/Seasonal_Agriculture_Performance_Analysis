@@ -1,0 +1,23 @@
+SEASONAL AGRICULTURE PERFORMANCE ANALYSIS
+============================================================
+
+Total records: 4000
+Total variables: 28
+
+KEY INSIGHTS
+------------------------------------------------------------
+Highest average yield season: Kharif
+Highest average profit season: Kharif
+Highest water efficiency season: Kharif
+Highest disease/pest risk season: Kharif
+Highest rainfall season: Kharif
+Lowest water usage season: Rabi
+
+
+SEASONAL SUMMARY
+------------------------------------------------------------
+        Farm_Area_Hectares  Rainfall_mm  Avg_Temperature_C  Humidity_pct  Sunlight_Hours_Day  Soil_Moisture_pct  Fertilizer_kg_ha  Pesticide_Litre_ha  Seed_Quality_Score  Yield_Tonnes_Ha  Production_Tonnes  Market_Price_INR_Tonne  Total_Cost_INR  Revenue_INR  Profit_INR  Water_Used_m3  Water_Efficiency_t_per_1000m3  Disease_Pest_Risk_pct
+Season                                                                                                                                                                                                                                                                                                                                             
+Kharif                7.94       849.20              28.45         71.81                6.79              31.15            187.08                5.08                0.82             5.63              46.31                44850.91       531804.41    710719.06   178914.65        6102.20                           5.89                  54.47
+Rabi                  7.75       437.62              23.49         57.89                7.59              24.07            185.41                5.02                0.83             5.04              41.49                44747.97       513836.58    601526.05    87689.47        5846.99                           5.19                  40.48
+Zaid                  8.09       304.65              31.04         52.01                8.18              19.28            184.64                5.17                0.82             4.64              38.89                44212.03       543976.73    519171.90   -24804.82        6419.89                           4.41                  38.22
